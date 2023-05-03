@@ -1,0 +1,59 @@
+#home-container h1 {
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+#sol-select-container {
+    width: 60%;
+    margin: 20px auto;
+    height: 300px;
+    padding: 20px;
+
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.mars-photos-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 calc(33.33% - 1rem);
+    max-width: calc(33.33% - 1rem);
+    margin-bottom: 50px;
+}
+
+.photo-container>img {
+    width: 100%;
+    height: auto;
+}
+
+.photo-container>p {
+    margin: 0.5rem 0 0;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .photo-container {
+        flex: 1 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-container {
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+}

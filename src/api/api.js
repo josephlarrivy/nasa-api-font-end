@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const nasa_api_key = require('./key')
+import {nasa_api_key} from './key'
 
 class NASA_API {
   constructor() {
@@ -9,21 +9,27 @@ class NASA_API {
   }
 
   async makeRequest(endpoint, params = {}) {
-    const url = `${this.base_url}${endpoint}`;
-    params['api_key'] = this.api_key;
+    const url = `${this.base_url}${endpoint}&api_key=${this.api_key}`;
     try {
-      const response = await axios.get(url, { params });
+      // console.log(url)
+      const response = await axios.get(url);
       return response.data;
     } catch (error) {
       throw new Error(error.response.data.error.message);
     }
   }
 
-  async getNearEarthObjects(startDate, endDate) {
-    const endpoint = '/neo/rest/v1/feed';
-    const params = { start_date: startDate, end_date: endDate };
-    return this.makeRequest(endpoint, params);
+  async test() {
+    return 'test'
+  }
+
+  async getCuriosityPhotos(sol) {
+    const endpoint = `/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}`;
+    const data = await this.makeRequest(endpoint);
+    return data;
   }
 }
 
-export default NASA_API;
+const NASA_DATA_REQUEST = new NASA_API();
+
+export default NASA_DATA_REQUEST;

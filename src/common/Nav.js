@@ -9,26 +9,19 @@ const Nav = () => {
     <div id="navbar-container">
 
       <div id="navbar-links-container">
-        <Link to="/test1">
-          <p>test1</p>
+        <Link to="/">
+          <p>Home</p>
         </Link>
         <Link to="/test2">
-          <p>test2</p>
+          <p>test2test2</p>
         </Link>
-        <Link to="/test2">
-          <p>test2</p>
-        </Link>
-        <Link to="/test2">
-          <p>test2</p>
-        </Link>
-        <p>|</p>
       </div>
 
       <div id="navbar-dropdowns-container">
         <NavDropdownElement 
-          text='dropdown1' 
+          text='Photos' 
           links={[
-            {'text' : 'test1', 'url' : '/test1'},
+            { 'text' : 'Mars', 'url' : '/photos/mars'},
             { 'text': 'test1', 'url': '/test1' },
             { 'text': 'test1', 'url': '/test1' },
           ]}
@@ -40,8 +33,16 @@ const Nav = () => {
             { 'text': 'test2', 'url': '/test2' },
             { 'text': 'test2', 'url': '/test2' },
           ]} />
-        <NavDropdownElement text='dropdown3' />
-        <NavDropdownElement text='dropdown4' />
+        <NavDropdownElement text='dropdown3' links={[
+          { 'text': 'test2', 'url': '/test2' },
+          { 'text': 'test2', 'url': '/test2' },
+          { 'text': 'test2', 'url': '/test2' },
+        ]} />
+        <NavDropdownElement text='dropdown4' links={[
+          { 'text': 'test2', 'url': '/test2' },
+          { 'text': 'test2', 'url': '/test2' },
+          { 'text': 'test2', 'url': '/test2' },
+        ]} />
       </div>
       
     </div>
