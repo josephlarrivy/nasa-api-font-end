@@ -31,53 +31,6 @@
     transform: translate(-50%, -50%);
     animation: fadeText 1s ease-in-out;
 }
-@keyframes fadeText {
-    0% {
-        opacity: 1;
-        top: 25%;
-        left: 65%;
-    }
-
-    20% {
-        opacity: 0;
-        top: 25%;
-        left: 65%;
-    }
-    80% {
-        opacity: 0;
-        top: 25%;
-        left: 30%;
-    }
-
-    100% {
-        opacity: 1;
-        top: 25%;
-        left: 30%;
-    }
-}
-@keyframes fadeTextBack {
-    0% {
-        opacity: 1;
-        top: 25%;
-        left: 30%;
-    }
-    20% {
-        opacity: 0;
-        top: 25%;
-        left: 30%;
-    }
-    80% {
-        opacity: 0;
-        top: 25%;
-        left: 65%;
-    }
-    100% {
-        opacity: 1;
-        top: 25%;
-        left: 65%;
-    }
-}
-
 
 
 
@@ -114,6 +67,59 @@
     width: 120px;
     height: 120px;
     left: 60%;
+}
+
+
+@keyframes fadeText {
+    0% {
+        opacity: 1;
+        top: 25%;
+        left: 65%;
+    }
+
+    20% {
+        opacity: 0;
+        top: 25%;
+        left: 65%;
+    }
+
+    80% {
+        opacity: 0;
+        top: 25%;
+        left: 30%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 25%;
+        left: 30%;
+    }
+}
+
+@keyframes fadeTextBack {
+    0% {
+        opacity: 1;
+        top: 25%;
+        left: 30%;
+    }
+
+    20% {
+        opacity: 0;
+        top: 25%;
+        left: 30%;
+    }
+
+    80% {
+        opacity: 0;
+        top: 25%;
+        left: 65%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 25%;
+        left: 65%;
+    }
 }
 
 @keyframes innerLargeBallAnimation {
