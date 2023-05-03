@@ -23,7 +23,7 @@ const Nav = () => {
           links={[
             { 'text' : 'Mars', 'url' : '/photos/mars'},
             { 'text': 'test1', 'url': '/test1' },
-            { 'text': 'test1', 'url': '/test1' },
+            { 'text': 'Search Photos', 'url': '/photos/search' },
           ]}
         />
         <NavDropdownElement

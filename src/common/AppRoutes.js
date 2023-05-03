@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom'
 import Home from "../components/Home";
+import ImageSearch from "../components/ImageSearch";
 import MarsPhotos from "../components/MarsPhotos";
 import Test1 from "../components/Test1";
 import Test2 from "../components/Test2";
@@ -20,6 +21,9 @@ const AppRoutes = () => {
       />
       <Route exact path="/photos/mars"
         element={<MarsPhotos />}
+      />
+      <Route exact path="/photos/search"
+        element={<ImageSearch />}
       />
     </Routes>
   )

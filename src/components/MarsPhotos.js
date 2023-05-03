@@ -18,10 +18,10 @@ const MarsPhotos = () => {
     const getData = async () => {
       const data = await NASA_DATA_REQUEST.getCuriosityPhotos(sol)
       console.log(data)
-      setPhotos(data.photos)
+      setPhotos(data.photos.slice(10,49))
     }
     getData()
-  }, [sol])
+  }, [])
 
   const handleChange = (event) => {
     const value = event.target.value;
