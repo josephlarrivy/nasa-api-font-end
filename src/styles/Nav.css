@@ -1,20 +1,46 @@
 #navbar-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
+    /* justify-content: space-around; */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-    margin-top: 30px;
+    align-items: center;
     color: #FFFFFF;
-    height: 5vh;
     background-color: #FFFFFF;
     margin-top: 0;
 }
 
-#page-content {
-    transition: transform 1s;
+#navbar-links-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: aqua; */
 }
 
-#page-content.animate {
-    transform: translateY(-100%);
+#navbar-dropdowns-container {
+    width: fill;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: pink; */
+}
+
+#navbar-dropdowns-container>div {
+    flex: 1;
+    min-width: 0;
+}
+
+#navbar-container a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+#navbar-container p {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
 }

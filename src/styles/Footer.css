@@ -1,0 +1,17 @@
+#footer-container {
+    margin-top: auto;
+    /* Push the footer to the bottom of the container */
+    width: 100%;
+    height: 60px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#footer-container a {
+    margin-right: 30px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}

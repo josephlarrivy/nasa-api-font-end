@@ -1,7 +1,8 @@
 #home-container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     color: #FFFFFF;
     margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
 }
-

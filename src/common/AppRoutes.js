@@ -10,7 +10,7 @@ const AppRoutes = () => {
       <Route exact path="/test1"
         element={<Test1 />}
       />
-      <Route exact path="/test1"
+      <Route exact path="/test2"
         element={<Test2 />}
       />
     </Routes>
