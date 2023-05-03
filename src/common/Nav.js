@@ -19,24 +19,29 @@ const Nav = () => {
 
       <div id="navbar-dropdowns-container">
         <NavDropdownElement 
-          text='Photos' 
+          text='Planet Photos' 
           links={[
-            { 'text' : 'Mars', 'url' : '/photos/mars'},
-            { 'text': 'test1', 'url': '/test1' },
-            { 'text': 'Search Photos', 'url': '/photos/search' },
+            { 'text': 'Mercury', 'url': '/photos/mercury' },
+            { 'text': 'Venus', 'url': '/photos/venus' },
+            { 'text': 'Earth', 'url': '/photos/earth' },
+            { 'text': 'Mars', 'url': '/photos/mars' },
+            { 'text': 'Jupiter', 'url': '/photos/jupiter' },
+            { 'text': 'Saturn', 'url': '/photos/saturn' },
+            { 'text': 'Uranus', 'url': '/photos/uranus' },
+            { 'text': 'Neptune', 'url': '/photos/neptune' },
+            { 'text': 'Earth\'s Moon', 'url': '/photos/moon' },
           ]}
         />
         <NavDropdownElement
           text='dropdown2'
           links={[
-            { 'text': 'test2', 'url': '/test2' },
+            { 'text': 'Mars Sols', 'url': '/photos/mars/sols' },
             { 'text': 'test2', 'url': '/test2' },
             { 'text': 'test2', 'url': '/test2' },
           ]} />
-        <NavDropdownElement text='dropdown3' links={[
-          { 'text': 'test2', 'url': '/test2' },
-          { 'text': 'test2', 'url': '/test2' },
-          { 'text': 'test2', 'url': '/test2' },
+        <NavDropdownElement text='Missions' links={[
+          { 'text': 'Apollo', 'url': '/missions/apollo' },
+          { 'text': 'Artemis', 'url': '/missions/artemis' },
         ]} />
         <NavDropdownElement text='dropdown4' links={[
           { 'text': 'test2', 'url': '/test2' },

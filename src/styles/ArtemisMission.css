@@ -1,0 +1,32 @@
+
+#artemis-main-container {
+    width: 100vw;
+    min-height: 100vh;
+    color: #FFFFFF;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#artemis-video-container {
+    margin-top: 30px;
+    margin-left: 30px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#artemis-mission-text-header {
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: black;
+    margin: 20px;
+}
+
+#artemis-mission-text-header h1 {
+    color: black;
+    text-shadow: none;
+}

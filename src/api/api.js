@@ -34,8 +34,7 @@ class NASA_API {
   async queryImages(term) {
     const endpoint = `/search?q=${term}`;
     const data = await this.makeRequest(endpoint, 'image');
-    console.log(data)
-    return data;
+    return data.collection.items;
   }
 
 
