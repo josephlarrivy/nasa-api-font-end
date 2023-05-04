@@ -8,7 +8,7 @@ const Test1 = () => {
   
   return (
     <div id="home-container">
-      <Nav />
+      <Nav navColor='white' textColor='black' />
       <h1>Test1 Test1 Test1 Test1 Test1 Test1 Test1 Test1 Test1 </h1>
       <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
       <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
@@ -50,7 +50,7 @@ const Test1 = () => {
       <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
       <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
 
-      <Footer />
+      <Footer navColor='white' textColor='black' />
     </div>
   )
 }

@@ -45,7 +45,7 @@ const ArtemisMission = () => {
 
   return (
     <div id="artemis-main-container">
-      <Nav />
+      <Nav navColor='white' textColor='black'/>
       <div id="artemis-video-container">
         <YouTube videoId={videoId} opts={opts} />
         <div id="artemis-mission-text-header">
@@ -54,7 +54,7 @@ const ArtemisMission = () => {
 
         </div>
       </div>
-      <div className="artemis-photo-container">
+      {/* <div className="artemis-photo-container">
         <div className="artemis-image-conatiner">
           <img src={images[0].link} alt={images[0].description} />
         </div>
@@ -64,8 +64,8 @@ const ArtemisMission = () => {
           <p><strong>Description</strong></p>
           <p>{images[0].description}</p>
         </div>
-      </div>
-      <Footer />
+      </div> */}
+      <Footer navColor='white' textColor='black' />
     </div>
   )
 }

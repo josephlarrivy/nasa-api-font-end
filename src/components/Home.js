@@ -8,10 +8,10 @@ const Home = () => {
 
   return (
     <div id="home-container">
-      <Nav />
+      <Nav navColor='white' textColor='black' />
      
 
-      <Footer />
+      <Footer navColor='white' textColor='black' />
     </div>
   )
 }

@@ -42,7 +42,7 @@ const ImageSearch = () => {
 
   return (
     <div id="home-container">
-      <Nav />
+      <Nav navColor='white' textColor='black' />
       <h1>{term.toUpperCase()} IMAGES</h1>
       <div className="search-photos-container">
         {images && images.map(image => {
@@ -57,7 +57,7 @@ const ImageSearch = () => {
           )
         })}
       </div>
-      <Footer />
+      <Footer navColor='white' textColor='black' />
     </div>
   )
 }

@@ -4,9 +4,17 @@ import { Link } from "react-router-dom";
 import '../styles/Nav.css'
 import NavDropdownElement from "./NavDropdownElement";
 
-const Nav = () => {
+const Nav = ({navColor, textColor}) => {
   return (
-    <div id="navbar-container">
+    <div id="navbar-container"
+      style={{ backgroundColor: navColor }}
+    >
+      <style>
+        {`#navbar-container * {color: ${textColor}}`}
+      </style>
+
+
+
 
       <div id="navbar-links-container">
         <Link to="/">
@@ -18,7 +26,9 @@ const Nav = () => {
       </div>
 
       <div id="navbar-dropdowns-container">
-        <NavDropdownElement 
+        <NavDropdownElement
+          navColor={navColor}
+          textColor={textColor}
           text='Planet Photos' 
           links={[
             { 'text': 'Mercury', 'url': '/photos/mercury' },
@@ -33,17 +43,27 @@ const Nav = () => {
           ]}
         />
         <NavDropdownElement
+          navColor={navColor}
+          textColor={textColor}
           text='dropdown2'
           links={[
             { 'text': 'Mars Sols', 'url': '/photos/mars/sols' },
             { 'text': 'test2', 'url': '/test2' },
             { 'text': 'test2', 'url': '/test2' },
           ]} />
-        <NavDropdownElement text='Missions' links={[
+        <NavDropdownElement
+          navColor={navColor}
+          textColor={textColor}
+          text='Missions'
+          links={[
           { 'text': 'Apollo', 'url': '/missions/apollo' },
           { 'text': 'Artemis', 'url': '/missions/artemis' },
         ]} />
-        <NavDropdownElement text='dropdown4' links={[
+        <NavDropdownElement
+          navColor={navColor}
+          textColor={textColor}
+          text='dropdown4'
+          links={[
           { 'text': 'test2', 'url': '/test2' },
           { 'text': 'test2', 'url': '/test2' },
           { 'text': 'test2', 'url': '/test2' },

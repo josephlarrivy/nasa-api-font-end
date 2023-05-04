@@ -11,49 +11,25 @@ const Test2 = () => {
 
     return (
         <div id="home-container">
-            <Nav />
-            <h1>Test1 Test1 Test1 Test1 Test1 Test1 Test1 Test1 Test1 </h1>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
-            <p>test1 test1 test1 test1 test1 test1 test1 test1 </p>
+            <Nav navColor='pink' textColor='teal' />
+            <h2>test2 test2 test2 test2 test2 test2 test2 test2 test2 </h2>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
 
-            <Footer />
+
+            <Footer navColor='pink' textColor='teal' />
         </div>
     )
 }

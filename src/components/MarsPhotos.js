@@ -38,7 +38,7 @@ const MarsPhotos = () => {
 
   return (
     <div id="home-container">
-      <Nav />
+      <Nav navColor='white' textColor='black' />
         <h1>Photos of Mars</h1>
         <div id="sol-select-container">
           <h4>Mars Sols</h4>
@@ -68,7 +68,7 @@ const MarsPhotos = () => {
             )
           })}
         </div>
-      <Footer />
+      <Footer navColor='white' textColor='black' />
     </div>
   )
 }
