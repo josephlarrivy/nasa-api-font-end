@@ -19,10 +19,6 @@ const ArtemisMission = () => {
 
       for (let item of data) {
         if (item.links && item.links[0] && item.links[0].href) {
-          // console.log(item.links[0].href);
-          // console.log(item.data[0].title);
-          // console.log(item.data[0].description);
-
           imagesArr.push(
             {
               'title': item.data[0].title,
@@ -37,8 +33,14 @@ const ArtemisMission = () => {
     getData()
   }, [])
 
-  const videoId = 'wKwoBudYIiI';
-  const opts = {
+  const videoIdVideoOne = 'wKwoBudYIiI';
+  const optsVideoOne = {
+    height: '504',
+    width: '896'
+  };
+
+  const videoIdVideoTwo = 'jrDv0OdMt5s';
+  const optsVideoTwo = {
     height: '504',
     width: '896'
   };
@@ -46,26 +48,73 @@ const ArtemisMission = () => {
   return (
     <div id="artemis-main-container">
       <Nav navColor='white' textColor='black'/>
+      <img src={'https://www.nasa.gov/sites/default/files/thumbnails/image/artemis_logo_0.png'} />
       <div id="artemis-video-container">
-        <YouTube videoId={videoId} opts={opts} />
-        <div id="artemis-mission-text-header">
-          <h1>Artemis</h1>
-          <p>The Artemis program is a NASA-led initiative to return humans to the Moon and establish a sustainable presence there, with the goal of eventually sending astronauts to Mars. The program includes several phases, including the development of new technologies and systems, the launch of robotic missions to the Moon to prepare for human exploration, and the landing of the first woman and next man on the lunar surface by 2024. Artemis aims to advance scientific understanding, demonstrate new technologies, and inspire the next generation of space explorers while also supporting international partnerships and commercial opportunities.</p>
-
-        </div>
+        <YouTube videoId={videoIdVideoOne} opts={optsVideoOne} />
       </div>
-      {/* <div className="artemis-photo-container">
-        <div className="artemis-image-conatiner">
-          <img src={images[0].link} alt={images[0].description} />
-        </div>
-        <div className="artemis-image-caption-conatiner">
-          <p><strong>Title</strong></p>
-          <p>{images[0].title}</p>
-          <p><strong>Description</strong></p>
-          <p>{images[0].description}</p>
-        </div>
-      </div> */}
-      <Footer navColor='white' textColor='black' />
+      <br></br><br></br>
+      <br></br><br></br>
+      <div id="artemis-mission-text-one">
+        <h1>The Artemis Program</h1>
+        <p>The Artemis program is a NASA-led initiative to return humans to the Moon and establish a sustainable presence there, with the goal of eventually sending astronauts to Mars. The program includes several phases, including the development of new technologies and systems, the launch of robotic missions to the Moon to prepare for human exploration, and humans on the lunar surface by 2024.</p>
+        <br></br><br></br>
+        {/* <p>Artemis aims to advance scientific understanding, demonstrate new technologies, and inspire the next generation of space explorers while also supporting international partnerships and commercial opportunities.</p> */}
+      </div>
+      <br></br><br></br>
+
+      <div>
+        {images && images.slice(10, 14).map((image, index) => {
+          const isEven = index % 2 === 0; // check if the index is even
+          const containerClassName = isEven ? 'artemis-image-container-even' : 'artemis-image-container-odd';
+          return (
+            <div className={containerClassName}>
+              <div className="artemis-photo-container">
+                <img src={image.link} alt={image.description} />
+              </div>
+              <div className="artemis-image-caption-container">
+                <p><strong>Description</strong></p>
+                <p>{image.description}</p>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      
+      <div id="artemis-video-container">
+        <YouTube videoId={videoIdVideoTwo} opts={optsVideoTwo} />
+      </div>
+
+      <br></br><br></br>
+      <br></br><br></br>
+      <div id="artemis-mission-text-one">
+        <p>Artemis aims to advance scientific understanding, demonstrate new technologies, and inspire the next generation of space explorers while also supporting international partnerships and commercial opportunities.</p>
+      </div>
+
+      <br></br><br></br>
+
+      <div>
+        {images && images.slice(16, 20).map((image, index) => {
+          const isEven = index % 2 === 0; // check if the index is even
+          const containerClassName = isEven ? 'artemis-image-container-even' : 'artemis-image-container-odd';
+          return (
+            <div className={containerClassName}>
+              <div className="artemis-photo-container">
+                <img src={image.link} alt={image.description} />
+              </div>
+              <div className="artemis-image-caption-container">
+                <p><strong>Description</strong></p>
+                <p>{image.description}</p>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      <br></br><br></br>
+      <br></br><br></br>
+      <br></br><br></br>
+
+      <Footer navColor='black' textColor='white' />
     </div>
   )
 }

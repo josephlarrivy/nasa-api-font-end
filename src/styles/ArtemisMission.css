@@ -2,7 +2,8 @@
 #artemis-main-container {
     width: 100vw;
     min-height: 100vh;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: black;
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
@@ -10,23 +11,49 @@
 
 
 #artemis-video-container {
-    margin-top: 30px;
-    margin-left: 30px;
-
+    margin: auto;
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
 }
 
-#artemis-mission-text-header {
-    background-color: white;
+#artemis-mission-text-one {
+    background-color: blue;
     margin: auto;
     text-align: center;
     padding: 15px;
-    color: black;
-    margin: 20px;
+    color: white;
+    font-size: 22px;
+    padding: 20px 15% 50px 15%;
 }
 
-#artemis-mission-text-header h1 {
-    color: black;
+#artemis-mission-text-one h1 {
+    color: white;
     text-shadow: none;
+}
+
+
+.artemis-photo-container {
+}
+
+.artemis-photo-container img {
+    width: 600px;
+}
+
+.artemis-image-caption-conatiner {
+    width: 60%;
+    margin-bottom: 60px;
+}
+
+.artemis-image-container-even {
+    padding: 30px 25% 30px 25%;
+    background-color: white;
+    font-size: 22px;
+}
+
+.artemis-image-container-odd {
+    padding: 30px 25% 30px 25%;
+    background-color: blue;
+    color: white;
+    font-size: 22px;
 }
