@@ -49,6 +49,9 @@ const ArtemisMission = () => {
     <div id="artemis-main-container">
       <Nav navColor='white' textColor='black'/>
       <img src={'https://www.nasa.gov/sites/default/files/thumbnails/image/artemis_logo_0.png'} />
+      <div id="iss-mission-tile">
+        <h1>The Artemis Mission</h1>
+      </div>
       <div id="artemis-video-container">
         <YouTube videoId={videoIdVideoOne} opts={optsVideoOne} />
       </div>

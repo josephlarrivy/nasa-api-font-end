@@ -4,6 +4,8 @@ import ApolloMission from "../components/ApolloMission";
 import ArtemisMission from "../components/ArtemisMission";
 import Home from "../components/Home";
 import ImageSearch from "../components/ImageSearch";
+import IssMission from "../components/IssMission";
+import MarsMission from "../components/MarsMission";
 import MarsPhotos from "../components/MarsPhotos";
 import Test1 from "../components/Test1";
 import Test2 from "../components/Test2";
@@ -29,6 +31,12 @@ const AppRoutes = () => {
       />
       <Route exact path="/missions/apollo"
         element={<ApolloMission />}
+      />
+      <Route exact path="/missions/iss"
+        element={<IssMission />}
+      />
+      <Route exact path="/missions/mars"
+        element={<MarsMission />}
       />
       <Route exact path="/photos/:term"
         element={<ImageSearch />}

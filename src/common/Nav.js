@@ -56,8 +56,10 @@ const Nav = ({navColor, textColor}) => {
           textColor={textColor}
           text='Missions'
           links={[
-          { 'text': 'Apollo', 'url': '/missions/apollo' },
-          { 'text': 'Artemis', 'url': '/missions/artemis' },
+            { 'text': 'Artemis', 'url': '/missions/artemis' },
+            { 'text': 'International Space Station', 'url': '/missions/iss' },
+            { 'text': 'Mars Rovers', 'url': '/missions/mars' },
+            { 'text': 'Apollo', 'url': '/missions/apollo' },
         ]} />
         <NavDropdownElement
           navColor={navColor}

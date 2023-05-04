@@ -1,0 +1,106 @@
+#mars-main-container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    color: black;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#mars-video-container {
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+#mars-mission-tile {
+    background-color: blue;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 22px;
+    width: 100%;
+    /* padding: 20px 15% 50px 15%; */
+}
+
+#mars-mission-history-header {
+    background-color: blue;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 22px;
+}
+
+.mars-history-banner {
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    padding: 20px 15% 50px 15%;
+}
+
+#mars-mission-text-two {
+    background-color: white;
+    color: black;
+}
+
+#mars-mission-text-three {
+    background-color: blue;
+    color: white;
+}
+
+#mars-mission-text-four {
+    background-color: white;
+    color: black;
+}
+#mars-mission-text-five {
+    background-color: blue;
+    color: white;
+        
+}
+
+#mars-mission-text-one {
+    background-color: blue;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 22px;
+    padding: 20px 15% 50px 15%;
+}
+
+#mars-mission-text-one h1 {
+    color: white;
+    text-shadow: none;
+}
+
+
+.mars-photo-container {}
+
+.mars-photo-container img {
+    width: 600px;
+}
+
+.mars-image-caption-conatiner {
+    width: 60%;
+    margin-bottom: 60px;
+}
+
+.mars-image-container-even {
+    padding: 30px 25% 30px 25%;
+    background-color: white;
+    font-size: 22px;
+}
+
+.mars-image-container-odd {
+    padding: 30px 25% 30px 25%;
+    background-color: blue;
+    color: white;
+    font-size: 22px;
+}
