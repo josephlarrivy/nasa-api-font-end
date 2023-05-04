@@ -14,7 +14,7 @@ const DatePickerComponent = ({ selectedDate, setSelectedDate }) => {
 
   return (
     <div>
-      <label htmlFor="datepicker">Select a date: </label>
+      <label htmlFor="datepicker"></label>
       <input type="date" id="datepicker" value={date} onChange={handleDateChange} />
     </div>
   );

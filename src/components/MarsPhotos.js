@@ -13,6 +13,8 @@ const MarsPhotos = () => {
 
   const [photos, setPhotos] = useState(null)
   const [sol, setSol] = useState(1000);
+  const [selectedImage, setSelectedImage] = useState(null);
+
 
   useEffect(() => {
     const getData = async () => {
@@ -38,10 +40,9 @@ const MarsPhotos = () => {
 
   return (
     <div id="home-container">
-      <Nav navColor='white' textColor='black' />
-        <h1>Photos of Mars</h1>
+      <Nav navColor='black' textColor='white' />
         <div id="sol-select-container">
-          <h4>Mars Sols</h4>
+          <h1>Mars Sols</h1>
           <p>Since Mars is farther away from the sun than Earth, it takes longer to complete one orbit around the sun. As a result, a Martian year is longer than an Earth year, lasting about 687 Earth days.</p>
           <p>A Mars sol is a solar day on Mars, which is the time it takes for the planet to rotate once on its axis and return to the same position relative to the sun. One sol on Mars is approximately 24 hours and 39 minutes long, which is slightly longer than a day on Earth.</p>
           <p>Pick a sol between 1 and 300 to see images from the Coriosity Rover on that sol.</p>
@@ -60,7 +61,12 @@ const MarsPhotos = () => {
           {photos && photos.map(photo => {
             return (
               <div className="photo-container">
-                <img src={photo.img_src} alt={`Mars Rover photo taken on ${photo.earth_date}`} />
+                <img
+                  src={photo.img_src}
+                  alt={`Mars Rover photo taken on ${photo.earth_date}`}
+                  onClick={() =>
+                    setSelectedImage(photo.img_src)}
+                />
                 <p><strong>Rover:</strong> {photo.rover.name}</p>
                 <p><strong>Camera:</strong> {photo.camera.full_name}</p>
                 <p><strong>Earth Date:</strong> {photo.earth_date}</p>
@@ -68,6 +74,12 @@ const MarsPhotos = () => {
             )
           })}
         </div>
+      {selectedImage && (
+        <div className="image-overlay">
+          <img src={selectedImage} />
+          <button onClick={() => setSelectedImage(null)} id='close-overlay-button'>Close Image</button>
+        </div>
+      )}
       <Footer navColor='white' textColor='black' />
     </div>
   )

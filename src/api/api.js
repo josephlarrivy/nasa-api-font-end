@@ -41,9 +41,7 @@ class NASA_API {
   try {
     const endpoint = `/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}`
     const response = await this.makeRequest(endpoint)
-
-    // return response
-
+    
     const objectData = [];
     for (const date in response.near_earth_objects) {
       for (const object of response.near_earth_objects[date]) {
@@ -54,12 +52,12 @@ class NASA_API {
       }
     }
 
-    return objectData;
-  } catch (error) {
-    console.error(error);
-    return null;
+      return objectData;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   }
-}
 
 
 }

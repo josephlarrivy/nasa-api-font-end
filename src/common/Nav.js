@@ -20,9 +20,6 @@ const Nav = ({navColor, textColor}) => {
         <Link to="/">
           <p>Home</p>
         </Link>
-        <Link to="/test2">
-          <p>test2test2</p>
-        </Link>
       </div>
 
       <div id="navbar-dropdowns-container">
@@ -55,11 +52,10 @@ const Nav = ({navColor, textColor}) => {
         <NavDropdownElement
           navColor={navColor}
           textColor={textColor}
-          text='dropdown2'
+          text='Interactive'
           links={[
             { 'text': 'Mars Sols', 'url': '/photos/mars/sols' },
             { 'text': 'Near Earth Objects', 'url': '/neo/main' },
-            { 'text': 'test2', 'url': '/test2' },
           ]} />
         <NavDropdownElement
           navColor={navColor}
