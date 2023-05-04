@@ -8,6 +8,9 @@
     flex-direction: column;
 }
 
+#iss-main-container h1 {
+    color: #FFFFFF;
+}
 
 #iss-video-container {
     margin: auto;

@@ -8,6 +8,10 @@
     flex-direction: column;
 }
 
+#mars-main-container h1 {
+    color: #FFFFFF;
+}
+
 
 #mars-video-container {
     margin: auto;

@@ -9,6 +9,9 @@
     flex-direction: column;
 }
 
+#artemis-main-container h1 {
+    color: #FFFFFF;
+}
 
 #artemis-video-container {
     margin: auto;

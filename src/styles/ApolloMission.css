@@ -6,6 +6,11 @@
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
+    
+}
+
+#apollo-main-container h1 {
+    color: #FFFFFF;
 }
 
 
