@@ -1,0 +1,57 @@
+#apollo-main-container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    color: black;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#apollo-video-container {
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+#apollo-mission-text-one {
+    background-color: blue;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 22px;
+    padding: 20px 15% 50px 15%;
+}
+
+#apollo-mission-text-one h1 {
+    color: white;
+    text-shadow: none;
+}
+
+
+.apollo-photo-container {}
+
+.apollo-photo-container img {
+    width: 600px;
+}
+
+.apollo-image-caption-conatiner {
+    width: 60%;
+    margin-bottom: 60px;
+}
+
+.apollo-image-container-even {
+    padding: 30px 25% 30px 25%;
+    background-color: white;
+    font-size: 22px;
+}
+
+.apollo-image-container-odd {
+    padding: 30px 25% 30px 25%;
+    background-color: blue;
+    color: white;
+    font-size: 22px;
+}
