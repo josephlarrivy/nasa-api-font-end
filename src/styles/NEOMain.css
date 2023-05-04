@@ -1,0 +1,14 @@
+#neo-main-main-container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    color: black;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#Neo-main-main-container h1 {
+    color: #FFFFFF;
+}

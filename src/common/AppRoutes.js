@@ -7,8 +7,9 @@ import ImageSearch from "../components/ImageSearch";
 import IssMission from "../components/IssMission";
 import MarsMission from "../components/MarsMission";
 import MarsPhotos from "../components/MarsPhotos";
-import Test1 from "../components/Test1";
-import Test2 from "../components/Test2";
+import NEOMain from "../components/NEOMain";
+import Test1 from "../helpers/Test1";
+import Test2 from "../helpers/Test2";
 
 const AppRoutes = () => {
 
@@ -22,6 +23,9 @@ const AppRoutes = () => {
       />
       <Route exact path="/test2"
         element={<Test2 />}
+      />
+      <Route exact path="/photos/:term"
+        element={<ImageSearch />}
       />
       <Route exact path="/photos/mars/sols"
         element={<MarsPhotos />}
@@ -40,6 +44,9 @@ const AppRoutes = () => {
       />
       <Route exact path="/photos/:term"
         element={<ImageSearch />}
+      />
+      <Route exact path="/neo/main"
+        element={<NEOMain />}
       />
     </Routes>
   )

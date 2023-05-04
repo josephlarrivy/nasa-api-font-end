@@ -37,6 +37,30 @@ class NASA_API {
     return data.collection.items;
   }
 
+  async getNeoObjectData(startDate = '2023-06-04', endDate ='2023-06-04') {
+  try {
+    const endpoint = `/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}`
+    const response = await this.makeRequest(endpoint)
+
+    // return response
+
+    const objectData = [];
+    for (const date in response.near_earth_objects) {
+      for (const object of response.near_earth_objects[date]) {
+        const name = object.name;
+        const size = object.estimated_diameter.kilometers.estimated_diameter_max;
+        const distance = object.close_approach_data[0].miss_distance.kilometers;
+        objectData.push({ name, size, distance });
+      }
+    }
+
+    return objectData;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 
 }
 

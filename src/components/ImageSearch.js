@@ -17,7 +17,6 @@ const ImageSearch = () => {
     console.log(term)
     const getData = async () => {
       const data = await NASA_DATA_REQUEST.queryImages(term)
-      // console.log(data)
 
       let imagesArr = []
       let imagesSubset = []
@@ -30,16 +29,11 @@ const ImageSearch = () => {
             'link': item.links[0].href
           })
           if (imagesSubset.length === 5) {
-            console.log(imagesSubset)
             imagesArr.push(imagesSubset)
             imagesSubset = []
           }
         }
       }
-      if (imagesSubset.length === 5) {
-        imagesArr.push(imagesSubset)
-      }
-
       setImagesOuterArr(imagesArr)
     }
     getData()
@@ -55,23 +49,38 @@ const ImageSearch = () => {
           return (
             <div className="search-photos-group-container">
               <div className="image-one">
-                <img src={innerArr[0].link} onClick={() => setSelectedImage(innerArr[0].link)} />
+                <img src={innerArr[0].link}
+                  onClick={() => 
+                    setSelectedImage(innerArr[0].link)}
+                />
               </div>
               <div className="search-photos-group-inner-right-container">
                 <div className="images-right-top">
                   <div className="image-two">
-                    <img src={innerArr[1].link} onClick={() => setSelectedImage(innerArr[1].link)} />
+                    <img src={innerArr[1].link}
+                      onClick={() => 
+                        setSelectedImage(innerArr[1].link)}
+                    />
                   </div>
                   <div className="image-three">
-                    <img src={innerArr[2].link} onClick={() => setSelectedImage(innerArr[2].link)} />
+                    <img src={innerArr[2].link}
+                      onClick={() => 
+                        setSelectedImage(innerArr[2].link)}
+                    />
                   </div>
                 </div>
                 <div className="images-right-bottom">
                   <div className="image-four">
-                    <img src={innerArr[3].link} onClick={() => setSelectedImage(innerArr[3].link)} />
+                    <img src={innerArr[3].link}
+                      onClick={() => 
+                        setSelectedImage(innerArr[3].link)}
+                    />
                   </div>
                   <div className="image-five">
-                    <img src={innerArr[4].link} onClick={() => setSelectedImage(innerArr[4].link)} />
+                    <img src={innerArr[4].link}
+                      onClick={() => 
+                        setSelectedImage(innerArr[4].link)}
+                    />
                   </div>
                 </div>
               </div>
@@ -85,6 +94,10 @@ const ImageSearch = () => {
           <button onClick={() => setSelectedImage(null)} id='close-overlay-button'>Close Image</button>
         </div>
       )}
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Footer navColor='black' textColor='white' />
     </div>
   )

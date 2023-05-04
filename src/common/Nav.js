@@ -45,22 +45,22 @@ const Nav = ({navColor, textColor}) => {
         <NavDropdownElement
           navColor={navColor}
           textColor={textColor}
-          text='dropdown2'
-          links={[
-            { 'text': 'Mars Sols', 'url': '/photos/mars/sols' },
-            { 'text': 'test2', 'url': '/test2' },
-            { 'text': 'test2', 'url': '/test2' },
-          ]} />
-        <NavDropdownElement
-          navColor={navColor}
-          textColor={textColor}
           text='Missions'
           links={[
             { 'text': 'Artemis', 'url': '/missions/artemis' },
             { 'text': 'International Space Station', 'url': '/missions/iss' },
             { 'text': 'Mars Rovers', 'url': '/missions/mars' },
             { 'text': 'Apollo', 'url': '/missions/apollo' },
-        ]} />
+          ]} />
+        <NavDropdownElement
+          navColor={navColor}
+          textColor={textColor}
+          text='dropdown2'
+          links={[
+            { 'text': 'Mars Sols', 'url': '/photos/mars/sols' },
+            { 'text': 'Near Earth Objects', 'url': '/neo/main' },
+            { 'text': 'test2', 'url': '/test2' },
+          ]} />
         <NavDropdownElement
           navColor={navColor}
           textColor={textColor}
