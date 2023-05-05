@@ -8,6 +8,7 @@ import IssMission from "../components/IssMission";
 import MarsMission from "../components/MarsMission";
 import MarsPhotos from "../components/MarsPhotos";
 import NEOMain from "../components/NEOMain";
+import SpaceWeatherNotifications from "../components/SpaceWeatherNotifications";
 import Test1 from "../helpers/Test1";
 import Test2 from "../helpers/Test2";
 
@@ -47,6 +48,9 @@ const AppRoutes = () => {
       />
       <Route exact path="/neo/main"
         element={<NEOMain />}
+      />
+      <Route exact path="/donki/:service"
+        element={<SpaceWeatherNotifications />}
       />
     </Routes>
   )

@@ -70,11 +70,16 @@ const Nav = ({navColor, textColor}) => {
         <NavDropdownElement
           navColor={navColor}
           textColor={textColor}
-          text='dropdown4'
+          text='Space Weather'
           links={[
-          { 'text': 'test2', 'url': '/test2' },
-          { 'text': 'test2', 'url': '/test2' },
-          { 'text': 'test2', 'url': '/test2' },
+            { 'text': 'Coronal Mass Ejections', 'url': '/donki/CME' },
+            { 'text': 'Geomagnetic Storms', 'url': '/donki/GST' },
+            { 'text': 'Interplanetary Shocks', 'url': '/donki/IPS' },
+            { 'text': 'Solar Flares', 'url': '/donki/FLR' },
+            { 'text': 'Solar Energetic Particles', 'url': '/donki/SEP' },
+            { 'text': 'Magnetopause Crossings', 'url': '/donki/MPC' },
+            { 'text': 'Radiation Belt Enhancements', 'url': '/donki/RBE' },
+            { 'text': 'WSA+EnlilSimulation', 'url': '/donki/WSAEnlilSimulations' }
         ]} />
       </div>
       

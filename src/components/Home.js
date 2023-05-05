@@ -10,8 +10,48 @@ const Home = () => {
 
 
   useEffect(() => {
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getCoronalMassEjectionData()
+    //   console.log(data)
+    // }
+    // getData()
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getCoronalMassEjectionAnalysisData()
+    //   console.log(data)
+    // }
+    // getData()
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getGeomagneticStormData()
+    //   console.log(data)
+    // }
+    // getData()
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getInterplanetaryShockData()
+    //   console.log(data)
+    // }
+    // getData()
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getSolarFlareData()
+    //   console.log(data)
+    // }
+    // getData()
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getMagnetopauseCrossingData()
+    //   console.log(data)
+    // }
+    // getData()
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getRadiationBeltEnhancementData()
+    //   console.log(data)
+    // }
+    // getData()
+    // const getData = async () => {
+    //   const data = await NASA_DATA_REQUEST.getWSAEnlilSimulationData()
+    //   console.log(data)
+    // }
+    // getData()
     const getData = async () => {
-      const data = await NASA_DATA_REQUEST.getCoronalMassEjectionData()
+      const data = await NASA_DATA_REQUEST.getDokiNotificationsData()
       console.log(data)
     }
     getData()

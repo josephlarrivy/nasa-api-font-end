@@ -1,0 +1,29 @@
+#space-weather-container {
+    width: 100vw;
+    min-height: 100vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: #FFFFFF;
+}
+
+#space-weather-inner-container {
+    margin-top: 2vh;
+    width: 100%;
+    height: calc(100vh - 5vh);
+    /* assuming your nav has a height of 5vh */
+    overflow-y: scroll;
+    color: #FFFFFF;
+}
+
+#space-weather-inner-container h1 {
+    color: #FFFFFF;
+}
+
+#date-pickers-container {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
