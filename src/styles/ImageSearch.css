@@ -86,6 +86,13 @@ h1 {
     align-items: center;
 }
 
+.image-overlay p {
+    padding-top: 30px;
+    color: #FFFFFF;
+    width: 70%;
+    margin: auto;
+}
+
 .image-overlay img {
     max-width: 80%;
     max-height: 80%;

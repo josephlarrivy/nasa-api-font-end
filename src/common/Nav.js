@@ -16,13 +16,23 @@ const Nav = ({navColor, textColor}) => {
 
 
 
-      <div id="navbar-links-container">
+      {/* <div id="navbar-links-container">
         <Link to="/">
           <p>Home</p>
         </Link>
-      </div>
+      </div> */}
 
       <div id="navbar-dropdowns-container">
+        <NavDropdownElement
+          navColor={navColor}
+          textColor={textColor}
+          text='Home'
+          links={[
+            { 'text': 'Home', 'url': '/' },
+            { 'text': 'test2', 'url': '/test2' },
+            { 'text': 'test2', 'url': '/test2' },
+          ]} />
+        
         <NavDropdownElement
           navColor={navColor}
           textColor={textColor}

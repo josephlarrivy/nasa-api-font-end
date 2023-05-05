@@ -21,7 +21,11 @@ class NASA_API {
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
-      throw new Error(error.response.data.error.message);
+      if (error.response) {
+        throw new Error(error.response.data.error.message);
+      } else {
+        throw new Error(error.message);
+      }
     }
   }
 
@@ -59,6 +63,19 @@ class NASA_API {
     }
   }
 
+  async getCoronalMassEjectionData(startDate = '2023-05-01', endDate = '2023-05-02') {
+    try {
+      const endpoint = `/DONKI/CME?startDate=${startDate}&endDate=${endDate}`;
+      const data = await this.makeRequest(endpoint);
+      return data;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
+
+  
 
 }
 

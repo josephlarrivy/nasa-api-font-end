@@ -11,6 +11,7 @@ const ImageSearch = () => {
   const {term} = useParams()
   const [imagesOuterArr, setImagesOuterArr] = useState(null)
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedCaption, setSelectedCaption] = useState(null)
 
 
   useEffect(() => {
@@ -39,6 +40,11 @@ const ImageSearch = () => {
     getData()
   }, [])
 
+  const setSelectedImageData = (imageUrl, text) => {
+    setSelectedImage(imageUrl)
+    setSelectedCaption(text)
+  }
+
 
   return (
     <div id="images-page-container">
@@ -51,7 +57,7 @@ const ImageSearch = () => {
               <div className="image-one">
                 <img src={innerArr[0].link}
                   onClick={() => 
-                    setSelectedImage(innerArr[0].link)}
+                    setSelectedImageData(innerArr[0].link, innerArr[0].description)}
                 />
               </div>
               <div className="search-photos-group-inner-right-container">
@@ -59,13 +65,13 @@ const ImageSearch = () => {
                   <div className="image-two">
                     <img src={innerArr[1].link}
                       onClick={() => 
-                        setSelectedImage(innerArr[1].link)}
+                        setSelectedImageData(innerArr[1].link, innerArr[2].description)}
                     />
                   </div>
                   <div className="image-three">
                     <img src={innerArr[2].link}
                       onClick={() => 
-                        setSelectedImage(innerArr[2].link)}
+                        setSelectedImageData(innerArr[2].link, innerArr[2].description)}
                     />
                   </div>
                 </div>
@@ -73,13 +79,13 @@ const ImageSearch = () => {
                   <div className="image-four">
                     <img src={innerArr[3].link}
                       onClick={() => 
-                        setSelectedImage(innerArr[3].link)}
+                        setSelectedImageData(innerArr[3].link, innerArr[3].description)}
                     />
                   </div>
                   <div className="image-five">
                     <img src={innerArr[4].link}
                       onClick={() => 
-                        setSelectedImage(innerArr[4].link)}
+                        setSelectedImageData(innerArr[4].link, innerArr[4].description)}
                     />
                   </div>
                 </div>
@@ -90,7 +96,12 @@ const ImageSearch = () => {
       </div>
       {selectedImage && (
         <div className="image-overlay">
-          <img src={selectedImage} />
+          <div className="image-overlay-inner-container">
+            <img src={selectedImage} />
+            <br></br>
+            <p><b>Description:</b></p>
+            <p>{selectedCaption}</p>
+          </div>
           <button onClick={() => setSelectedImage(null)} id='close-overlay-button'>Close Image</button>
         </div>
       )}

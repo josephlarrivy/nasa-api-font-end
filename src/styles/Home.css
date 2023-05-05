@@ -2,7 +2,22 @@
     width: 100vw;
     min-height: 100vh;
     color: #FFFFFF;
-    margin-top: 5vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
+}
+
+#home-inner-container {
+    margin-top: 2vh;
+    width: 100%;
+    height: calc(100vh - 5vh);
+        /* assuming your nav has a height of 5vh */
+        overflow-y: scroll;
+}
+
+#ball-divs-banner {
+    width: 100%;
+    display: flex;
+    margin-top: 300px;
+    justify-content: space-around;
 }
