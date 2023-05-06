@@ -66,8 +66,19 @@ const Nav = ({navColor, textColor}) => {
           links={[
             { 'text': 'Mars Sols', 'url': '/photos/mars/sols' },
             { 'text': 'Near Earth Objects', 'url': '/neo/main' },
+            { 'text': 'Satellite Tracking', 'url': '/earthorbitingobjects' },
           ]} />
         <NavDropdownElement
+          navColor={navColor}
+          textColor={textColor}
+          text='Placeholder'
+          links={[
+            { 'text': 'test2', 'url': '/test2' },
+            { 'text': 'test2', 'url': '/test2' },
+            { 'text': 'test2', 'url': '/test2' },
+            { 'text': 'test2', 'url': '/test2' },
+        ]} />
+        {/* <NavDropdownElement
           navColor={navColor}
           textColor={textColor}
           text='Space Weather'
@@ -80,7 +91,8 @@ const Nav = ({navColor, textColor}) => {
             { 'text': 'Magnetopause Crossings', 'url': '/donki/MPC' },
             { 'text': 'Radiation Belt Enhancements', 'url': '/donki/RBE' },
             { 'text': 'WSA+EnlilSimulation', 'url': '/donki/WSAEnlilSimulations' }
-        ]} />
+        ]} /> */}
+        
       </div>
       
     </div>

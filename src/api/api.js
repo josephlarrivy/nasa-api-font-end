@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { twoline2satrec, propagate, eciToGeodetic, gstime } from "satellite.js";
 
 import {nasa_api_key} from './key'
 
@@ -62,6 +63,54 @@ class NASA_API {
       return null;
     }
   }
+
+
+  async getTleData(noradId) {
+    const url = `https://tle.ivanstanojevic.me/api/tle/${noradId}`;
+    const response = await axios.get(url);
+
+    const tleData = response.data;
+    const line1 = tleData.line1
+    const line2 = tleData.line2
+
+    const satRec = twoline2satrec(line1, line2);
+    const positionAndVelocity = propagate(satRec, new Date());
+    const gmst = gstime(new Date());
+    const latLng = eciToGeodetic(positionAndVelocity.position, gmst);
+
+    const result = {
+      'latitude' : latLng.latitude * (180 / Math.PI),
+      'longitude' : latLng.longitude * (180 / Math.PI)
+    };
+
+    return result;
+    // return response
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   async getCoronalMassEjectionData(startDate = '2023-05-01', endDate = '2023-05-02') {
     try {
@@ -177,81 +226,37 @@ class NASA_API {
     console.log('API service:', service)
     try {
       const endpoint = `/DONKI/${service}?startDate=${startDate}&endDate=${endDate}`;
-      const data = await this.makeRequest(endpoint);
+      const response = await this.makeRequest(endpoint);
+      // console.log(response)
 
-      // Initialize an object with all possible keys
-      const keys = {
-        activityID: null,
-        time21_5: null,
-        gstID: null,
-        flrID: null,
-        sepID: null,
-        mpcID: null,
-        rbeID: null,
-      };
+      if (service === 'CME') {
+        const mySet = new Set();
 
-      // Standardize the data format
-      let standardizedData = [];
-      for (let item of data) {
-        let newObj = {};
-
-        // Assign values to each key in the newObj object
-        for (let key in keys) {
-          if (item.hasOwnProperty(key)) {
-            newObj[key] = item[key];
-          }
+        for (let item of response.slice(0, 20)) {
+          const activityUrl = 'https://api.nasa.gov/DONKI/CME?activityID='
+          let resp = await axios.get(`${activityUrl}${item.activityID}&api_key=${this.api_key}`)
+          console.log(resp)
         }
 
-        // Assign the common keys based on the type of event
-        if (item.hasOwnProperty("activityID")) {
-          newObj.type = "CME";
-          newObj.startTime = item.startTime;
-          newObj.link = item.link;
-          newObj.note = item.note;
-          newObj.instruments = item.instruments;
-          newObj.cmeAnalyses = item.cmeAnalyses;
-        } else if (item.hasOwnProperty("time21_5")) {
-          newObj.type = "CME Analysis";
-          newObj.latitude = item.latitude;
-          newObj.longitude = item.longitude;
-          newObj.halfAngle = item.halfAngle;
-          newObj.speed = item.speed;
-          newObj.isMostAccurate = item.isMostAccurate;
-          newObj.note = item.note;
-          newObj.enlilList = item.enlilList;
-        } else if (item.hasOwnProperty("gstID")) {
-          newObj.type = "Geomagnetic Storm";
-          newObj.startTime = item.startTime;
-          newObj.allKpIndex = item.allKpIndex;
-          newObj.linkedEvents = item.linkedEvents;
-        } else if (item.hasOwnProperty("flrID")) {
-          newObj.type = "Solar Flare";
-          newObj.beginTime = item.beginTime;
-          newObj.peakTime = item.peakTime;
-          newObj.endTime = item.endTime;
-          newObj.classType = item.classType;
-          newObj.sourceLocation = item.sourceLocation;
-          newObj.linkedEvents = item.linkedEvents;
-        } else if (item.hasOwnProperty("sepID")) {
-          newObj.type = "Solar Energetic Particle";
-          newObj.eventTime = item.eventTime;
-          newObj.instruments = item.instruments;
-          newObj.linkedEvents = item.linkedEvents;
-        } else if (item.hasOwnProperty("mpcID")) {
-          newObj.type = "Magnetopause Crossing";
-          newObj.eventTime = item.eventTime;
-          newObj.instruments = item.instruments;
-          newObj.linkedEvents = item.linkedEvents;
-        } else if (item.hasOwnProperty("rbeID")) {
-          newObj.type = "Radiation Belt Enhancement";
-          newObj.eventTime = item.eventTime;
-          newObj.instruments = item.instruments;
-          newObj.linkedEvents = item.linkedEvents;
-        };
+       
 
-        standardizedData.push(newObj);
+        let responseData = [...mySet];
+        return responseData;
       }
-      return standardizedData;
+
+      // for (let item of separatedData) {
+        //   console.log(item.activityID)
+        //   const activityUrl = 'https://api.nasa.gov/DONKI/CME?activityID='
+        //   let resp = await axios.get(`${activityUrl}${item.activityID}&api_key=${this.api_key}`)
+        //   console.log(resp)
+        //   let info = resp.data[0]
+        //   responseData.push({
+        //     'startTime' : info.startTime,
+        //     'instruments' : info.instruments,
+        //     'description' : info.note
+        //   })
+        // }
+
     } catch (error) {
       console.error(error);
       return null;

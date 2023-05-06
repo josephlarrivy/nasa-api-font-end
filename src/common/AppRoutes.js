@@ -2,6 +2,8 @@ import React from "react";
 import { Routes, Route } from 'react-router-dom'
 import ApolloMission from "../components/ApolloMission";
 import ArtemisMission from "../components/ArtemisMission";
+import EarthOrbitingObjects from "../components/EarthOrbitingObjects";
+import EonetData from "../components/EarthOrbitingObjects";
 import Home from "../components/Home";
 import ImageSearch from "../components/ImageSearch";
 import IssMission from "../components/IssMission";
@@ -51,6 +53,9 @@ const AppRoutes = () => {
       />
       <Route exact path="/donki/:service"
         element={<SpaceWeatherNotifications />}
+      />
+      <Route exact path="/earthorbitingobjects"
+        element={<EarthOrbitingObjects />}
       />
     </Routes>
   )
