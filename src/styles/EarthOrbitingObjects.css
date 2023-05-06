@@ -34,6 +34,24 @@
     text-align: left;
 }
 
+#toggle-buttons-container .active {
+    margin-top: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: aqua;
+}
+
+#toggle-buttons-container .inactive {
+    margin-top: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: red;
+}
+
 #satellites-map-container {
     /* z-index: 0; */
 }

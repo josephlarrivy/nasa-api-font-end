@@ -38,6 +38,17 @@ const EarthOrbitingObjects = () => {
     getData();
   }, []);
 
+
+  function handleSetShowSatellite(text) {
+    console.log(text);
+  }
+
+
+
+
+
+
+
   const customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=512&id=111524&format=png',
     iconSize: [50, 50],
@@ -51,10 +62,10 @@ const EarthOrbitingObjects = () => {
       </div>
       <div id="earth-orbiting-objects-data-inner-container">
         <div id="satellites-toggle-selectors-container">
-          <p>Click on a satellite to show its current orbital location.</p>
+          <p>Click on a satellite name to show its current orbital location.</p>
           <div id="toggle-buttons-container">
-            <p>test2</p>
-            <p>test3</p>
+            <button className="active" onClick={() => handleSetShowSatellite('test1')}>test1</button>
+            <button className="inactive" onClick={() => handleSetShowSatellite('test2')}>test2</button>
           </div>
         </div>
         <div id="satellites-map-container">
