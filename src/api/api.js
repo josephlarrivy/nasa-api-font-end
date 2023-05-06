@@ -78,13 +78,22 @@ class NASA_API {
     const gmst = gstime(new Date());
     const latLng = eciToGeodetic(positionAndVelocity.position, gmst);
 
+    const idToNameDict = {
+      25544: "International Space Station",
+      43700: "Chinese space station Tiangong-2",
+      43711: "Northrop Grumman's NG-12 Cygnus",
+      43215: "OneWeb Satellite",
+      28485: "NASA's Chandra X-ray Observatory",
+      25994: "NASA's Terra Earth-observing Satellite"
+    }
+
     const result = {
+      'name' : idToNameDict[noradId],
       'latitude' : latLng.latitude * (180 / Math.PI),
       'longitude' : latLng.longitude * (180 / Math.PI)
     };
 
     return result;
-    // return response
   }
 
 

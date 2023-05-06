@@ -14,9 +14,10 @@
 #satellites-toggle-selectors-container {
     position: absolute;
     width: 300px;
-    height: 60vh;
-    margin-top: 10vh;
-    margin-left: 30px;
+    /* height: 60vh; */
+    /* margin-top: 10vh; */
+    bottom: 12vh;
+    margin-left: 20px;
     padding: 10px;
 
     background-color: black;
@@ -34,23 +35,25 @@
     text-align: left;
 }
 
-#toggle-buttons-container .active {
-    margin-top: 5px;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: aqua;
-}
-
 #toggle-buttons-container .inactive {
     margin-top: 5px;
     padding: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: red;
+    background-color: gray;
 }
+
+#toggle-buttons-container .active {
+    margin-top: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+}
+
+
 
 #satellites-map-container {
     /* z-index: 0; */

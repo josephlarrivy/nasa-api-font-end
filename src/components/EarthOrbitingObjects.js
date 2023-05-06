@@ -15,7 +15,9 @@ import NASA_DATA_REQUEST from "../api/api";
 const EarthOrbitingObjects = () => {
 
   const { category } = useParams();
-  const [satelliteData, setSatelliteData] = useState(null)
+  const [satelliteCoordinateData, setSatelliteCoordinateData] = useState(null)
+  const [noradNumsArray, setNoradNumsArray] = useState([])
+  const [currentlyDisplayedSatNames, setCurrentlyDisplayedSatNames] = useState([])
   const mapRef = useRef(null);
 
 
@@ -23,31 +25,52 @@ const EarthOrbitingObjects = () => {
     console.log(category);
 
     const getData = async () => {
-      const response = await NASA_DATA_REQUEST.getTleData(25544);
-      console.log(response);
+      const tempLatLonArray = [];
+      const tempNameData = [];
+      for (let id of noradNumsArray) {
+        const response = await NASA_DATA_REQUEST.getTleData(id);
+        console.log(response);
 
-      const testSatData = {
-        'name': 'International Space Station',
-        'latitude': response.latitude,
-        'longitude': response.longitude
+        const satData = {
+          'name': response.name,
+          'latitude': response.latitude,
+          'longitude': response.longitude
+        }
+
+        tempLatLonArray.push(satData)
+        tempNameData.push(response.name)
       }
-
-      setSatelliteData([testSatData])
-
+      
+      setSatelliteCoordinateData([...tempLatLonArray])
+      setCurrentlyDisplayedSatNames([...tempNameData])
     };
     getData();
-  }, []);
+  }, [noradNumsArray]);
 
 
-  function handleSetShowSatellite(text) {
-    console.log(text);
+  function handleSetShowSatellite(idNum, array) {
+    const index = array.indexOf(idNum);
+    if (index === -1) {
+      array.push(idNum);
+    } else {
+      array.splice(index, 1);
+    }
+    return setNoradNumsArray([...array]);
   }
 
+  useEffect(() => {
+    console.log(currentlyDisplayedSatNames)
+  }, [currentlyDisplayedSatNames])
 
 
-
-
-
+  const satellitesArray = [
+    { id: 25544, name: "International Space Station" },
+    { id: 43700, name: "Chinese space station Tiangong-2" },
+    { id: 43711, name: "Northrop Grumman's NG-12 Cygnus" },
+    { id: 43215, name: "OneWeb Satellite" },
+    { id: 28485, name: "NASA's Chandra X-ray Observatory" },
+    { id: 25994, name: "NASA's Terra Earth-observing Satellite" }
+  ];
 
   const customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=512&id=111524&format=png',
@@ -62,10 +85,28 @@ const EarthOrbitingObjects = () => {
       </div>
       <div id="earth-orbiting-objects-data-inner-container">
         <div id="satellites-toggle-selectors-container">
-          <p>Click on a satellite name to show its current orbital location.</p>
+          <p>Click on a satellite name below to show its current orbital location.</p>
+          <p>Once it appears, click the icon to show its name and coordinates.</p>
           <div id="toggle-buttons-container">
-            <button className="active" onClick={() => handleSetShowSatellite('test1')}>test1</button>
-            <button className="inactive" onClick={() => handleSetShowSatellite('test2')}>test2</button>
+            {satellitesArray.map(item => {
+              if (noradNumsArray.includes(item.id)) {
+                return (
+                  <button
+                    className="active"
+                    onClick={() => handleSetShowSatellite(item.id, noradNumsArray)}>
+                    <b>{item.name}</b>
+                  </button>
+                )
+              } else {
+                return (
+                  <button
+                    className="inactive"
+                    onClick={() => handleSetShowSatellite(item.id, noradNumsArray)}>
+                    {item.name}
+                  </button>
+                )
+              }
+            })}
           </div>
         </div>
         <div id="satellites-map-container">
@@ -85,8 +126,8 @@ const EarthOrbitingObjects = () => {
             }}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {satelliteData &&
-              satelliteData.map((satellite) => (
+            {satelliteCoordinateData &&
+              satelliteCoordinateData.map((satellite) => (
                 <Marker
                   position={[satellite.latitude, satellite.longitude]}
                   key={satellite.name}
