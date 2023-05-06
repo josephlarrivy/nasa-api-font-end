@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { twoline2satrec, propagate, eciToGeodetic, gstime } from "satellite.js";
 
-import {nasa_api_key} from './key'
+// import {nasa_api_key} from './key'
+const nasa_api_key = 'm4tzZpFC2gZtjEvCkg5JopNsDiD7JMZ7qRqXJdQi'
 
 class NASA_API {
   constructor() {
