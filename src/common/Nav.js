@@ -29,8 +29,6 @@ const Nav = ({navColor, textColor}) => {
           text='Home'
           links={[
             { 'text': 'Home', 'url': '/' },
-            { 'text': 'test2', 'url': '/test2' },
-            { 'text': 'test2', 'url': '/test2' },
           ]} />
         
         <NavDropdownElement
@@ -64,35 +62,23 @@ const Nav = ({navColor, textColor}) => {
           textColor={textColor}
           text='Interactive'
           links={[
+            { 'text': 'Satellite Tracking', 'url': '/earthorbitingobjects' },
             { 'text': 'Mars Sols', 'url': '/photos/mars/sols' },
             { 'text': 'Near Earth Objects', 'url': '/neo/main' },
-            { 'text': 'Satellite Tracking', 'url': '/earthorbitingobjects' },
           ]} />
         <NavDropdownElement
           navColor={navColor}
           textColor={textColor}
-          text='Placeholder'
+          text='Spacecraft Photos'
           links={[
-            { 'text': 'test2', 'url': '/test2' },
-            { 'text': 'test2', 'url': '/test2' },
-            { 'text': 'test2', 'url': '/test2' },
-            { 'text': 'test2', 'url': '/test2' },
-        ]} />
-        {/* <NavDropdownElement
-          navColor={navColor}
-          textColor={textColor}
-          text='Space Weather'
-          links={[
-            { 'text': 'Coronal Mass Ejections', 'url': '/donki/CME' },
-            { 'text': 'Geomagnetic Storms', 'url': '/donki/GST' },
-            { 'text': 'Interplanetary Shocks', 'url': '/donki/IPS' },
-            { 'text': 'Solar Flares', 'url': '/donki/FLR' },
-            { 'text': 'Solar Energetic Particles', 'url': '/donki/SEP' },
-            { 'text': 'Magnetopause Crossings', 'url': '/donki/MPC' },
-            { 'text': 'Radiation Belt Enhancements', 'url': '/donki/RBE' },
-            { 'text': 'WSA+EnlilSimulation', 'url': '/donki/WSAEnlilSimulations' }
-        ]} /> */}
-        
+            { 'text': 'Space Shuttle', 'url': '/photos/space shuttle' },
+            { 'text': 'International Space Station', 'url': '/photos/international space station' },
+            { 'text': 'James Webb Space Telescope', 'url': '/photos/james webb space telescope' },
+            { 'text': 'Juno Jupiter Prode', 'url': '/photos/juno' },
+            { 'text': 'New Horizons Probe', 'url': '/photos/new horizons probe' },
+            { 'text': 'Voyager 1 Probe', 'url': '/photos/voyager 1' },
+          ]}
+        />
       </div>
       
     </div>

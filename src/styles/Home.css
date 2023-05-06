@@ -11,13 +11,35 @@
     margin-top: 2vh;
     width: 100%;
     height: calc(100vh - 5vh);
-        /* assuming your nav has a height of 5vh */
-        overflow-y: scroll;
+    overflow-y: scroll;
 }
 
-#ball-divs-banner {
-    width: 100%;
+#homepage-container {
+    width: 100vw;
+    min-height: 100vh;
+    color: #FFFFFF;
+    margin-top: 10vh;
     display: flex;
-    margin-top: 300px;
-    justify-content: space-around;
+    flex-direction: column;
+}
+
+#homepage-inner-container h1 {
+    color: #FFFFFF;
+}
+
+#homepage-inner-container {
+    margin-top: 2vh;
+    width: 100%;
+    height: calc(100vh - 5vh);
+    overflow-y: scroll;
+}
+
+#homepage-link a{
+    color: #FFFFFF;
+}
+
+#homepage-text-container {
+    width: 70%;
+    margin: auto;
+    font-size: larger;
 }
