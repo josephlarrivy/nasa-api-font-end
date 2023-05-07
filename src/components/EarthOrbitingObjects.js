@@ -40,20 +40,12 @@ const EarthOrbitingObjects = () => {
         tempLatLonArray.push(satData)
         tempNameData.push(response.name)
       }
-
+      
       setSatelliteCoordinateData([...tempLatLonArray])
       setCurrentlyDisplayedSatNames([...tempNameData])
     };
-
-    const intervalId = setInterval(() => {
-      getData();
-    }, 1000); // Call getData() every second
-
-    return () => {
-      clearInterval(intervalId);
-    }
+    getData();
   }, [noradNumsArray]);
-
 
 
   function handleSetShowSatellite(idNum, array) {
@@ -81,12 +73,9 @@ const EarthOrbitingObjects = () => {
   ];
 
 
-  
-
-
   const customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=512&id=111524&format=png',
-    iconSize: [40, 40],
+    iconSize: [50, 50],
   });
 
   return (
@@ -96,7 +85,7 @@ const EarthOrbitingObjects = () => {
       </div>
       <div id="earth-orbiting-objects-data-inner-container">
         <div id="satellites-toggle-selectors-container">
-          <p>Click on a satellite name below watch its orbital path.</p>
+          <p>Click on a satellite name below to show its current orbital location.</p>
           <p>Once it appears, click the icon to show its name and coordinates.</p>
           <div id="toggle-buttons-container">
             {satellitesArray.map(item => {
